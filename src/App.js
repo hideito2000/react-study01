@@ -1,24 +1,19 @@
 import { useState } from "react";
 
 export default function App() {
-  const [msg, setMsg] = useState("");
-  const [list, setList] = useState(["aaa", "bbb", "ccc"]);
-  const onClickButton = () => alert("aaa");
-  const onClickButton2 = () => {
-    list.push(msg);
-    alert(`メッセージ：${msg}`);
-  };
-  const onChange = (event) => setMsg(event.target.value);
-  const contentStyle = {
-    color: "blue",
-    fontSize: "18px"
-  };
+  console.log("App");
+  const [count, setCount] = useState(0);
+  
+  const onClickCountUp = () => {
+    setCount(count + 1);
+  }
+  
   return (
     <>
       <h1 style={{ color: "red" }}>こんにちわ</h1>
       <p style={contentStyle}>お元気ですか？</p>
       <button onClick={onClickButton}>ボタン</button>
-      <div>
+      {/* <div>
         <input type="text" onChange={onChange} />
         <button onClick={onClickButton2}>ボタン</button>
       </div>
@@ -27,7 +22,7 @@ export default function App() {
         {list.map((msg) => (
           <li>{msg}</li>
         ))}
-      </ul>
+      </ul> */}
     </>
   );
 }
